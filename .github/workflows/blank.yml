@@ -22,14 +22,14 @@ jobs:
     
     name: BuildDocs
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2.4.0
     # ...
     - run: echo $GITHUB_PATH
     - run: ls
     - uses: nikeee/docfx-action@v1.0.0
       name: Build Documentation
       with:
-        args: ${{GITHUB_PATH}}/docs/docfx.json
+        args: build ./docs/docfx.json
 
     # Publish generated site using GitHub Pages
     - uses: maxheld83/ghpages@master

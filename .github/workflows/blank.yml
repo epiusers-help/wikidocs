@@ -19,10 +19,14 @@ defaults:
 jobs:
   Build_DocFx :
     runs-on: ubuntu-latest
+
+        
     name: BuildDocs
     steps:
     - uses: actions/checkout@v1
     # ...
+    - run: echo $GITHUB_PATH
+    - run: ls
     - uses: nikeee/docfx-action@v1.0.0
       name: Build Documentation
       with:

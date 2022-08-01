@@ -19,8 +19,7 @@ defaults:
 jobs:
   Build_DocFx :
     runs-on: ubuntu-latest
-
-        
+    
     name: BuildDocs
     steps:
     - uses: actions/checkout@v1
@@ -30,7 +29,7 @@ jobs:
     - uses: nikeee/docfx-action@v1.0.0
       name: Build Documentation
       with:
-        args: ${{ GITHUB_PATH }}/docs/docfx.json
+        args: ${{GITHUB_PATH}}/docs/docfx.json
 
     # Publish generated site using GitHub Pages
     - uses: maxheld83/ghpages@master
